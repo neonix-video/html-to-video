@@ -1,0 +1,18 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "neonix dev",
+    "validate": "neonix validate",
+    "compile": "neonix compile",
+    "deploy": "neonix deploy"
+  },
+  "devDependencies": {
+    "@neonix/cli": "^0.1.0"
+  },
+  "dependencies": {
+    "@neonix/html-compiler": "^0.1.0"
+  }
+}
