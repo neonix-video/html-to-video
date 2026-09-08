@@ -1,11 +1,9 @@
 {
   "name": "create-neonix",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Create an offline-first Neonix HTML/CSS video project",
   "type": "module",
-  "bin": {
-    "create-neonix": "./bin/create-neonix.mjs"
-  },
+  "bin": "./bin/create-neonix.mjs",
   "files": ["bin", "templates", "README.md"],
   "engines": { "node": ">=20" },
   "publishConfig": { "access": "public" },
