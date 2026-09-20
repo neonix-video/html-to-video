@@ -1,7 +1,18 @@
 {
   "name": "create-neonix",
   "version": "1.0.1",
-  "description": "Create an offline-first Neonix HTML/CSS video project",
+  "description": "Scaffold an offline-first Neonix HTML/CSS project that compiles to motion video — HTML to motion video, powered by the Neonix HTML compiler",
+  "keywords": [
+    "html-to-video",
+    "html-to-motion-video",
+    "motion-graphics",
+    "video-generator",
+    "html-video",
+    "css-animation",
+    "video-compiler",
+    "neonix",
+    "ai-video"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/neonix-video/html-to-video.git"
