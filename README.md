@@ -18,6 +18,28 @@ with an explicit composition contract (width, height, fps, background, color spa
 compiler has a single, deterministic source of truth for what the frame looks like at every
 point in time.
 
+## How it works
+
+```text
+HTML/CSS (authoring)  →  Neonix hosted compiler  →  JSON scene document (editable)  →  video
+   ↑ you or an AI agent        ↑ cloud, no self-hosting          ↑ can be edited again
+```
+
+1. **Author** — you or an AI coding agent writes one `scene.html` file: markup, CSS and the
+   `neonix-document` metadata. This part is local and offline-first; `create-neonix` and
+   `npm run studio` never leave your machine.
+2. **Compile** — the HTML/CSS document is compiled by Neonix's hosted compiler into a
+   structured JSON scene document (Protocol V2). You don't run or host this compiler yourself.
+3. **Edit (optional)** — because the compiled output is JSON, not a rendered video, it can be
+   opened and edited again in an editor or by another program after compilation — not just by
+   changing the source HTML before compiling.
+4. **Render** — Neonix's hosted renderer turns the JSON scene document into the final video.
+   There's no rendering infrastructure (GPU workers, FFmpeg pipelines, etc.) for you to set up
+   or maintain.
+
+In short: the only thing you author is HTML/CSS. Compiling and rendering are handled by
+Neonix's infrastructure, not by this CLI or by code you run locally.
+
 ## Install
 
 ```bash
@@ -147,6 +169,15 @@ being a one-way pixel export.
 **Does this require a timeline editor?**
 No. Composition and animation are authored directly in HTML/CSS; `npm run studio` is only a
 fixed-frame preview, not an editor.
+
+**Do I need to set up my own rendering infrastructure?**
+No. You author `scene.html` locally; Neonix's hosted compiler and renderer turn it into a
+video. There's no self-hosted compiler, GPU worker, or render pipeline to run or maintain.
+
+**What does Neonix actually compile HTML/CSS into?**
+A structured JSON scene document (Protocol V2), not a rasterized video frame-by-frame. That
+JSON is what stays editable after compilation — in an editor or programmatically — before the
+final render.
 
 ---
 
