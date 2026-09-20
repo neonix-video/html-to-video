@@ -2,6 +2,7 @@
   "name": "create-neonix",
   "version": "1.0.1",
   "description": "Scaffold an offline-first Neonix HTML/CSS project that compiles to motion video — HTML to motion video, powered by the Neonix HTML compiler",
+  "license": "MIT",
   "keywords": [
     "html-to-video",
     "html-to-motion-video",

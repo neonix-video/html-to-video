@@ -2,6 +2,7 @@
   "name": "@neonix/studio",
   "version": "0.1.0",
   "description": "Vite-powered fixed-composition HTML/CSS preview studio for Neonix",
+  "license": "MIT",
   "type": "module",
   "bin": {
     "neonix-studio": "./bin/neonix-studio.mjs"
