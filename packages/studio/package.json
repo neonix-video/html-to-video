@@ -1,0 +1,18 @@
+{
+  "name": "@neonix/studio",
+  "version": "0.1.0",
+  "description": "Vite-powered fixed-composition HTML/CSS preview studio for Neonix",
+  "type": "module",
+  "bin": {
+    "neonix-studio": "./bin/neonix-studio.mjs"
+  },
+  "files": ["bin", "studio", "README.md"],
+  "engines": { "node": ">=20.19.0" },
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "check": "node --check bin/neonix-studio.mjs && node --check studio/main.js && node --check studio/frame.js"
+  },
+  "dependencies": {
+    "vite": "^8.2.2"
+  }
+}

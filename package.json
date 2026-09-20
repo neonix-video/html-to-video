@@ -1,6 +1,6 @@
 {
   "name": "create-neonix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create an offline-first Neonix HTML/CSS video project",
   "type": "module",
   "bin": "./bin/create-neonix.mjs",

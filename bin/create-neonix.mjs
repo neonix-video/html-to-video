@@ -132,9 +132,9 @@ async function main() {
 
   const projectName = projectNameFromPath(parsed.projectDirectory);
   const preset = presets[parsed.options.composition];
-  const config = {
-    kind: "neonix-html-project",
-    schemaVersion: 1,
+  const documentMetadata = {
+    kind: "neonix-html-document",
+    schemaVersion: 2,
     composition: {
       width: preset.width,
       height: preset.height,
@@ -146,7 +146,11 @@ async function main() {
   await copyTemplate(templateRoot, target, {
     "{{PROJECT_NAME}}": projectName,
     "{{COMPOSITION_PRESET}}": parsed.options.composition,
-    "{{CONFIG_JSON}}": JSON.stringify(config, null, 2),
+    "{{NEONIX_DOCUMENT_META}}": JSON.stringify(documentMetadata),
+    "{{COMPOSITION_WIDTH}}": String(preset.width),
+    "{{COMPOSITION_HEIGHT}}": String(preset.height),
+    "{{COMPOSITION_FPS}}": String(parsed.options.fps),
+    "{{COMPOSITION_BACKGROUND}}": parsed.options.background,
   });
 
   if (parsed.options.install) {
@@ -155,9 +159,9 @@ async function main() {
     if (result.status !== 0) process.exit(result.status ?? 1);
   }
 
-  console.log(`\nCreated Neonix project: ${target}`);
-  console.log(`\nNext steps:\n  cd ${path.relative(process.cwd(), target) || "."}\n  npm run dev\n\nComposition: ${parsed.options.composition} (${preset.width}x${preset.height} @ ${parsed.options.fps}fps)`);
-  if (!parsed.options.install) console.log("\nRun npm install before starting the local CLI.");
+  console.log(`\nCreated Neonix HTML project: ${target}`);
+  console.log(`\nNext steps:\n  cd ${path.relative(process.cwd(), target) || "."}\n  npm run studio\n\nComposition: ${parsed.options.composition} (${preset.width}x${preset.height} @ ${parsed.options.fps}fps)`);
+  if (!parsed.options.install) console.log("\nRun npm install before starting Neonix Studio.");
 }
 
 main().catch((error) => {

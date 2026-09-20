@@ -2,13 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script id="neonix-manifest" type="application/json">
-{{CONFIG_JSON}}
-    </script>
+    <meta name="neonix-document" content='{{NEONIX_DOCUMENT_META}}' />
+
+    <style data-neonix-bundle>
+      html,
+      body {
+        width: {{COMPOSITION_WIDTH}}px;
+        height: {{COMPOSITION_HEIGHT}}px;
+        margin: 0;
+        overflow: hidden;
+        background: {{COMPOSITION_BACKGROUND}};
+      }
+
+      .scene {
+        position: relative;
+        width: {{COMPOSITION_WIDTH}}px;
+        height: {{COMPOSITION_HEIGHT}}px;
+        overflow: hidden;
+        background: {{COMPOSITION_BACKGROUND}};
+      }
+
+      #title {
+        position: absolute;
+        left: 240px;
+        top: 360px;
+        width: calc({{COMPOSITION_WIDTH}}px - 480px);
+        color: #ffffff;
+        font-family: Inter, sans-serif;
+        font-size: 96px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+    </style>
   </head>
   <body>
-    <div id="blue-rectangle"></div>
-    <h1 id="title">Hello Neonix</h1>
+    <main class="scene" id="scene">
+      <h1 id="title">Hello Neonix</h1>
+
+    </main>
   </body>
 </html>

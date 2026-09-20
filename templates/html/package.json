@@ -4,15 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "neonix dev",
-    "validate": "neonix validate",
-    "compile": "neonix compile",
-    "deploy": "neonix deploy"
+    "studio": "neonix-studio",
+    "dev": "npm run studio"
   },
   "devDependencies": {
-    "@neonix/cli": "^0.1.0"
-  },
-  "dependencies": {
-    "@neonix/html-compiler": "^0.1.0"
+    "@neonix/studio": "^0.1.0"
   }
 }

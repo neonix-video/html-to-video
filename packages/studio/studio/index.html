@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neonix Studio</title>
+    <link rel="stylesheet" href="/__neonix_studio/studio.css" />
+  </head>
+  <body>
+    <main class="studio-shell">
+      <header class="studio-header">
+        <div>
+          <p class="eyebrow">NEONIX STUDIO</p>
+          <h1>HTML/CSS composition preview</h1>
+        </div>
+        <div id="composition-meta" class="composition-meta">Loading composition...</div>
+      </header>
+
+      <nav class="studio-toolbar" aria-label="Preview tools">
+        <div class="tool-group">
+          <span class="tool-label">Zoom</span>
+          <button type="button" class="tool-button is-active" data-zoom="fit">Fit</button>
+          <button type="button" class="tool-button" data-zoom="100">100%</button>
+        </div>
+        <div class="tool-group">
+          <label class="tool-toggle"><input id="toggle-grid" type="checkbox" /> Grid</label>
+          <label class="tool-toggle"><input id="toggle-safe" type="checkbox" /> Safe area</label>
+          <label class="tool-toggle"><input id="toggle-ruler" type="checkbox" /> Ruler</label>
+          <label class="tool-toggle"><input id="toggle-inspect" type="checkbox" /> Inspect</label>
+        </div>
+        <div id="inspector-readout" class="inspector-readout">Enable Inspect and hover an element.</div>
+      </nav>
+
+      <section class="preview-card" aria-label="Composition preview">
+        <div id="preview-viewport" class="preview-viewport">
+          <div id="stage-shell" class="stage-shell">
+            <iframe id="scene-frame" title="Neonix composition preview" src="about:blank"></iframe>
+            <div id="stage-grid" class="stage-overlay stage-grid" hidden></div>
+            <div id="stage-safe" class="stage-overlay stage-safe" hidden></div>
+            <div id="stage-ruler-x" class="stage-ruler stage-ruler-x" hidden>
+              <span>0</span><span data-ruler-x="25"></span><span data-ruler-x="50"></span><span data-ruler-x="75"></span><span data-ruler-x="100"></span>
+            </div>
+            <div id="stage-ruler-y" class="stage-ruler stage-ruler-y" hidden>
+              <span>0</span><span data-ruler-y="25"></span><span data-ruler-y="50"></span><span data-ruler-y="75"></span><span data-ruler-y="100"></span>
+            </div>
+            <div id="inspect-outline" class="inspect-outline" hidden></div>
+            <div id="inspect-label" class="inspect-label" hidden></div>
+          </div>
+        </div>
+      </section>
+
+      <p class="studio-note">
+        This preview is intentionally constrained to the composition size. Edit
+        <code>src/scene.html</code>; Vite reloads this frame automatically.
+      </p>
+
+      <section class="diagnostics-card" aria-live="polite">
+        <div class="diagnostics-heading">
+          <h2>Layout checks</h2>
+          <span>Studio-only warnings</span>
+        </div>
+        <ul id="diagnostics-list" class="diagnostics-list">
+          <li class="diagnostic-ok">Scanning inline scene styles...</li>
+        </ul>
+      </section>
+    </main>
+    <script type="module" src="/__neonix_studio/main.js"></script>
+  </body>
+</html>
