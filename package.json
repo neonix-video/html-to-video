@@ -2,6 +2,10 @@
   "name": "create-neonix",
   "version": "1.0.1",
   "description": "Create an offline-first Neonix HTML/CSS video project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neonix-video/html-to-video.git"
+  },
   "type": "module",
   "bin": { "create-neonix": "./bin/create-neonix.mjs" },
   "files": ["bin", "templates", "README.md"],
