@@ -28,8 +28,10 @@ HTML/CSS (authoring)  →  Neonix hosted compiler  →  JSON scene document (edi
 1. **Author** — you or an AI coding agent writes one `scene.html` file: markup, CSS and the
    `neonix-document` metadata. This part is local and offline-first; `create-neonix` and
    `npm run studio` never leave your machine.
-2. **Compile** — the HTML/CSS document is compiled by Neonix's hosted compiler into a
-   structured JSON scene document (Protocol V2). You don't run or host this compiler yourself.
+2. **Compile** — submit `scene.html` to [neonix.video](https://neonix.video), where Neonix's
+   hosted compiler turns it into a structured JSON scene document (Protocol V2). You don't run
+   or host this compiler yourself. See [Compile and export your video](#compile-and-export-your-video)
+   below for the two ways to do this.
 3. **Edit (optional)** — because the compiled output is JSON, not a rendered video, it can be
    opened and edited again in an editor or by another program after compilation — not just by
    changing the source HTML before compiling.
@@ -39,6 +41,21 @@ HTML/CSS (authoring)  →  Neonix hosted compiler  →  JSON scene document (edi
 
 In short: the only thing you author is HTML/CSS. Compiling and rendering are handled by
 Neonix's infrastructure, not by this CLI or by code you run locally.
+
+## Compile and export your video
+
+`create-neonix` and `npm run studio` only scaffold and preview `scene.html` locally — they
+never call Neonix. Once your scene is ready, there are two ways to actually compile and export
+it, both at [neonix.video](https://neonix.video):
+
+- **Manual** — sign in at [neonix.video](https://neonix.video), create a project, and paste or
+  upload `src/scene.html`. Preview, edit and export the video from the dashboard.
+- **AI agent** — connect Claude, ChatGPT or Grok to Neonix over
+  [Remote MCP](https://neonix.video/docs/mcp) and have the agent call `create_project_html`
+  with the contents of `src/scene.html` to compile, preview and export it for you.
+
+See [neonix.video/html-to-video](https://neonix.video/html-to-video) for a walkthrough of the
+full HTML-to-motion-video pipeline.
 
 ## Install
 

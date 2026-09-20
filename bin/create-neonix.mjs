@@ -162,6 +162,10 @@ async function main() {
   console.log(`\nCreated Neonix HTML project: ${target}`);
   console.log(`\nNext steps:\n  cd ${path.relative(process.cwd(), target) || "."}\n  npm run studio\n\nComposition: ${parsed.options.composition} (${preset.width}x${preset.height} @ ${parsed.options.fps}fps)`);
   if (!parsed.options.install) console.log("\nRun npm install before starting Neonix Studio.");
+  console.log(
+    "\nWhen src/scene.html is ready, compile and export the video at https://neonix.video" +
+      "\n(sign in and upload it manually, or connect an AI agent over Remote MCP: https://neonix.video/docs/mcp)",
+  );
 }
 
 main().catch((error) => {

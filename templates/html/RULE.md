@@ -11,4 +11,6 @@ This project targets the Neonix HTML compiler and Protocol V2 video runtime.
 - Keep assets local under `assets/` or declare them in the project asset manifest.
 - Run `npm run studio` after source changes to check the fixed composition preview.
 
-The complete compiler contract is provided by the installed `@neonix/html-compiler` package.
+The complete compiler contract — the full list of supported tags, CSS properties and values — is
+documented in `AGENTS.md`. Neonix's hosted compiler enforces this contract when it compiles
+`scene.html`; there is no local compiler package to install.

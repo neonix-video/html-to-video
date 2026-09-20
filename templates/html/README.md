@@ -15,3 +15,12 @@ The single source of truth is `src/scene.html`. It contains the required
 `meta[name="neonix-document"]` metadata and an inline
 `style[data-neonix-bundle]`, matching the canonical Neonix compiler document.
 Put local images, videos, audio and fonts in `assets/`. Text layers need an exact font asset when passed to the compiler; Studio can still preview with the browser font fallback.
+
+## Compile and export
+
+`npm run studio` only previews `src/scene.html` locally. To actually compile it and export a
+video, go to [neonix.video](https://neonix.video):
+
+- sign in and upload or paste `src/scene.html` in the dashboard, or
+- connect an AI agent (Claude, ChatGPT, Grok) over [Remote MCP](https://neonix.video/docs/mcp)
+  and have it compile, preview and export this project for you.
