@@ -1,5 +1,11 @@
 # create-neonix
 
+[![npm version](https://img.shields.io/npm/v/create-neonix)](https://www.npmjs.com/package/create-neonix)
+[![npm downloads](https://img.shields.io/npm/dm/create-neonix)](https://www.npmjs.com/package/create-neonix)
+[![license](https://img.shields.io/npm/l/create-neonix)](./LICENSE)
+
+> Neonix is an HTML-to-motion-video compiler: it turns HTML and CSS into a real, exportable motion video.
+
 **Neonix converts HTML/CSS into editable motion graphics and video.** `create-neonix` is
 the official scaffolding CLI for the Neonix HTML-to-motion-video pipeline: it generates an
 offline-first project containing a single, self-contained `scene.html` file that the
