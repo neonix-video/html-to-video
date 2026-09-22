@@ -18,6 +18,7 @@
     "type": "git",
     "url": "https://github.com/neonix-video/html-to-video.git"
   },
+  "homepage": "https://www.neonix.video",
   "type": "module",
   "bin": { "create-neonix": "./bin/create-neonix.mjs" },
   "files": ["bin", "templates", "README.md"],

@@ -1,0 +1,45 @@
+# create-neonix
+
+> Neonix is an HTML-to-motion-video compiler: it turns HTML and CSS into a real, exportable motion video.
+
+`create-neonix` is the official scaffolding CLI for the Neonix HTML-to-motion-video pipeline.
+It generates an offline-first project containing a single, self-contained `scene.html` file
+(markup, CSS and a `neonix-html-document` metadata contract) that Neonix's hosted compiler can
+turn into a rendered video. The CLI itself only scaffolds and previews locally — it never
+compiles or renders anything.
+
+## FAQ
+
+**What is create-neonix?**
+A Node.js CLI (`npx create-neonix@latest`) that scaffolds a local, offline-first HTML/CSS
+project for authoring Neonix video scenes. It generates `src/scene.html`, an `assets/`
+directory, and supporting docs (`AGENTS.md`, `RULE.md`, `neonix-capabilities.json`).
+
+**How do I install and use it?**
+Run `npx create-neonix@latest my-video`, then `cd my-video && npm install && npm run studio`
+to preview the scene locally. No account or API key is required to scaffold or preview.
+
+**Does create-neonix compile or render video?**
+No. `create-neonix` and `npm run studio` are purely local: they scaffold files and provide a
+fixed-frame preview of `scene.html`. Compiling the HTML into a JSON scene document (Protocol
+V2) and rendering that into a final video both happen on Neonix's hosted infrastructure at
+https://www.neonix.video — not on your machine.
+
+**How does this CLI relate to Neonix's hosted compiler?**
+`create-neonix` is the authoring entry point. Once `src/scene.html` is ready, you compile and
+export the video by signing in at https://www.neonix.video and uploading it manually, or by
+connecting an AI agent over Remote MCP (https://www.neonix.video/docs/mcp) and having it call
+`create_project_html` with the scene's contents.
+
+**Can AI coding agents use create-neonix?**
+Yes. Agents can run `npx create-neonix@latest` to scaffold a project, author `src/scene.html`
+against the supported HTML/CSS subset documented in the generated `AGENTS.md`/`RULE.md`, and
+then submit that file to Neonix over Remote MCP to compile and export the video.
+
+## Links
+
+- npm package: https://www.npmjs.com/package/create-neonix
+- GitHub repository: https://github.com/neonix-video/html-to-video
+- Neonix: https://www.neonix.video
+- Documentation: https://www.neonix.video/docs
+- Remote MCP for AI agents: https://www.neonix.video/docs/mcp
